@@ -1,0 +1,27 @@
+<div ng-app="app">
+    <script type="text/ng-template" id="/view1.tpl">
+    <p> 
+        First name: <input type="text" ng-model="firstname"/>
+        Last name: <input type="text" ng-model="lastname"/>
+    <button ng-click="loadView2()">Show values in Controller</button>
+    </p>
+        <p>First name:<p ng-bind="firstname"></p>
+        <p>Last name:<p ng-bind="lastname"></p>
+    </script>
+    <script type="text/ng-template" id="/view2.tpl" data-sly-include="template.html"></script>
+<div>
+
+<p>Enter a value: <input type="text" ng-model="name">
+<p ng-bind="name"></p>
+    <ul class="menu">
+        <li><a href="#/view1">Scope example</a>
+        <li><a href="#/view2">Show the list of cars</a>
+    </ul>
+<div ng-view></div>
+    <div data-sly-use.helloService="com.adobe.aem.sightly.services.HelloService">
+        ${helloService.helloMessage}
+    </div>
+    <!--Include angular js -->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='cq.widgets'}" data-sly-unwrap />
+</div>
+</div>

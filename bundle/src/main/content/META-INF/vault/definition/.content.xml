@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:vlt="http://www.day.com/jcr/vault/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="vlt:PackageDefinition"
+          builtWith="Adobe Experience Manager-6.1"
+          acHandling="ignore"
+          dependencies="[]"
+          requiresRestart="{Boolean}false"
+          requiresRoot="{Boolean}false"
+          jcr:description="${ext.description}"
+          group="aem/sightly"
+          name="${name}"
+          providerName="Adobe"
+          providerUrl="http://www.adobe.com"
+          version="${version}">
+    <thumbnail.png/>
+    <thumbnail jcr:primaryType="nt:unstructured">
+        <file/>
+    </thumbnail>
+    <screenshots jcr:primaryType="nt:unstructured"/>
+</jcr:root>

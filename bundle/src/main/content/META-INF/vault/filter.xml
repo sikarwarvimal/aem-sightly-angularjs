@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <!-- the CQ Gradle plugin will populate this -->
+    <filter root="/apps/install"/>
+</workspaceFilter>

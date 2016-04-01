@@ -1,0 +1,15 @@
+apply plugin: 'com.twcable.cq-package'
+
+ext.description = "AEM Signtly Angularjs Content"
+
+createPackage {
+    addNoBundles()
+}
+
+// Uninstall Steps before install steps
+removePackage.dependsOn uninstallPackage
+createPackage.dependsOn removePackage
+
+// Install Steps
+uploadPackage.dependsOn createPackage
+installPackage.dependsOn uploadPackage

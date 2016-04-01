@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'com.twcable.cq-package'
+apply plugin: 'com.twcable.scr'
+//apply plugin: 'com.twcable.cq-bundle'
+apply from: "${rootProject.projectDir}/gradle/dependencies.gradle"
+
+ext.bundleName = 'AEM Slightly Angular JS Bundle'
+ext.bundleDescription = 'AEM Slightly Angular JS Bundle'
+ext.symbolicName = "aem.sightly.angularjs"
+ext.description = "AEM Slightly Angular JS Bundle"
+
+jar.manifest {
+    attributes 'Bundle-Name': project.bundleName
+    attributes 'Bundle-SymbolicName': project.symbolicName
+    attributes 'Bundle-Description': project.bundleDescription
+
+    instruction 'Import-Package', '!org.apache.felix.scr.annotations; version="[1.7,2.0)"'
+    instruction 'Import-Package', "*"
+
+    // export everything to OSGi except *.impl packages
+    instruction 'Export-Package', "*"
+    instruction 'Export-Package', "!*.impl, *;-noimport:=false;version=${version}"
+}
+
+createPackage {
+    addProjectBundles()
+}
+
+// Uninstall Steps before install steps
+removePackage.dependsOn uninstallPackage
+createPackage.dependsOn removePackage
+
+// Install Steps
+uploadPackage.dependsOn createPackage
+installPackage.dependsOn uploadPackage

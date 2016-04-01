@@ -1,0 +1,25 @@
+dependencies {
+
+    compile "org.slf4j:slf4j-api:1.7.6"
+
+    // Used as part of the build to create the OSGI-INF/serviceComponents.xml file
+    compile "org.apache.felix:org.apache.felix.scr.annotations:1.9.10" // provided at runtime by CQ
+
+    // Apache Felix libraries
+    compile "org.apache.felix:org.osgi.core:1.4.0" // provided at runtime by CQ
+    compile "org.apache.felix:org.osgi.compendium:1.4.0" // provided at runtime by CQ
+
+    // Working with the JCR
+    compile "javax.jcr:jcr:2.0" // provided at runtime by CQ
+
+
+    // Servlet/JSP libraries
+    compile "org.apache.felix:org.apache.felix.http.servlet-api:1.1.0"
+    compile "org.apache.sling:org.apache.sling.api:2.9.0"
+    compile "org.apache.sling:org.apache.sling.jcr.api:2.2.0"
+    compile "commons-fileupload:commons-fileupload:1.3.1"
+
+    //compile "com.adobe.granite:com.adobe.granite.sightly.engine:1.1.52"
+    //compile "com.adobe.cq.sightly:cq-wcm-sightly-extension:1.1.18"
+    compile "com.adobe.aem:uber-jar:6.1.0-SP1-B0001:obfuscated-apis"
+}

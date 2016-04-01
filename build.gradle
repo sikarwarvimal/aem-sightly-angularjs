@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "http://dl.bintray.com/twcable/aem"
+        }
+    }
+
+    dependencies {
+        classpath "com.twcable.gradle:gradle-plugin-cq-package:2.1.0"
+        classpath "com.twcable.gradle:gradle-plugin-scr:1.0.2"
+    }
+}
+
+// Applying ide module and "repositories" location for all sub modules
+allprojects { proj ->
+    proj.repositories {
+        mavenLocal()
+        jcenter()
+        maven  { url "http://repo1.maven.org/maven2" }
+        maven { url 'http://repo.adobe.com/nexus/content/groups/public/' }
+    }
+}
