@@ -8,6 +8,7 @@ This project uses Gradle(http://gradle.org/) as build tool, TWC CQ Gradle Packag
 
 Running `install` task will the created bundles/packages and deploy on Author(4502) and Publish(4503) ports if they are running.
 
-**Build Plugin project**
+**Gradle Task to build and deploy**
+
 -> ./gradlew clean install
 
